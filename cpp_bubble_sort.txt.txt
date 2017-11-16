@@ -1,0 +1,20 @@
+#include <algorithm>
+
+void bubbleSort(int* array, int size)
+{
+    //для швидшого сортування посортованих
+    bool wasSwapped = true;
+    for (int i = 1; (i <= size) && wasSwapped; ++i)
+    {
+        wasSwapped = false;
+        for (int j = 0; j < (size - i); ++j)
+        {
+            if (array[j] > array[j + 1])
+            {
+                std::swap(array[j], array[j + 1]);
+                wasSwapped = true;
+            }
+        }
+    }
+}
+
